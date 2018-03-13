@@ -20,7 +20,7 @@ df.info(memory_usage='deep')
 # Convert to int
 print("Convert to Int")
 df_int = df.copy()
-df_int['Value'] = df_int.Value.astype('int32')
+df_int['Value'] =  pd.to_numeric(df_int.Value, downcast='unsigned')
 print("New Memory Usage")
 df_int.info(memory_usage='deep')
 
