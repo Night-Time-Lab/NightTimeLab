@@ -1,0 +1,213 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	    <script>
+	    	$( document ).ready(function() {
+		    	var carousel = $(".carousel"),
+				    currdeg  = 0,
+				    automatic = false;
+
+				$(".next").on("click", { d: "n" }, rotate);
+				$(".prev").on("click", { d: "p" }, rotate);
+				$(".rotate").on("click", function() {automatic = !automatic;});
+
+				function rotate(e) {
+					if(e.data.d=="n"){
+						currdeg = currdeg - 20;
+					}
+					if(e.data.d=="p"){
+						currdeg = currdeg + 20;
+					}
+					carousel.css({
+						"-webkit-transform": "rotateY("+currdeg+"deg)",
+						"-moz-transform": "rotateY("+currdeg+"deg)",
+						"-o-transform": "rotateY("+currdeg+"deg)",
+						"transform": "rotateY("+currdeg+"deg)"
+					});
+				}
+				function rotateAuto() {
+					// Rotate automatic
+					if(automatic) {
+						e ={};
+						e.data={};
+						e.data.d ="n";
+						rotate(e);
+					}
+				}
+
+				setInterval(function(){rotateAuto(); }, 2000);
+			});
+   		</script>
+		<style>
+			body {
+			  background: #333;
+			  padding: 70px 0;
+			  font: 15px/20px Arial, sans-serif;
+			}
+
+			.container {
+			  margin: 0 auto;
+			  width: 120px;
+			  height: 200px;
+			  position: relative;
+			  perspective: 1500px;
+			}
+
+			.carousel {
+			  height: 100%;
+			  width: 100%;
+			  position: absolute;
+			  transform-style: preserve-3d;
+			  transition: transform 1s;
+			}
+
+			.item {
+			  display: block;
+			  position: absolute;
+			  background: #000;
+			  width: 160px;
+			  height: 200px;
+			  line-height: 200px;
+			  font-size: 5em;
+			  text-align: center;
+			  color: #FFF;
+			  opacity: 0.95;
+			  border-radius: 10px;
+			}
+
+			.a1 {
+			  transform: rotateY(0deg) translateZ(500px);
+			  background: #ed1c24;
+			}
+			.a2 {
+			  transform: rotateY(20deg) translateZ(500px);
+			  background: #0072bc;
+			}
+			.a3 {
+			  transform: rotateY(40deg) translateZ(500px);
+			  background: #39b54a;
+			}
+			.a4 {
+			  transform: rotateY(60deg) translateZ(500px);
+			  background: #f26522;
+			}
+			.a5 {
+			  transform: rotateY(80deg) translateZ(500px);
+			  background: #630460;
+			} 
+			.a6 {
+			  transform: rotateY(100deg) translateZ(500px);
+			  background: #8c6239;
+			}
+			.a7 {
+			  transform: rotateY(120deg) translateZ(500px);
+			  background: #ed1c24;
+			}
+			.a8 {
+			  transform: rotateY(140deg) translateZ(500px);
+			  background: #0072bc;
+			}
+			.a9 {
+			  transform: rotateY(160deg) translateZ(500px);
+			  background: #39b54a;
+			}
+			.a10 {
+			  transform: rotateY(180deg) translateZ(500px);
+			  background: #f26522;
+			}
+			.a11 {
+			  transform: rotateY(200deg) translateZ(500px);
+			  background: #630460;
+			}
+			.a12 {
+			  transform: rotateY(220deg) translateZ(500px);
+			  background: #8c6239;
+			}
+			.a13 {
+			  transform: rotateY(240deg) translateZ(500px);
+			  background: #ed1c24;
+			}
+			.a14 {
+			  transform: rotateY(260deg) translateZ(500px);
+			  background: #0072bc;
+			}
+			.a15 {
+			  transform: rotateY(280deg) translateZ(500px);
+			  background: #39b54a;
+			}
+			.a16 {
+			  transform: rotateY(300deg) translateZ(500px);
+			  background: #f26522;
+			}
+			.a17 {
+			  transform: rotateY(320deg) translateZ(500px);
+			  background: #630460;
+			}
+			.a18 {
+			  transform: rotateY(340deg) translateZ(500px);
+			  background: #8c6239;
+			}
+
+			.next, .prev, .rotate {
+			  color: #444;
+			  position: absolute;
+			  top: 100px;
+			  padding: 1em 2em;
+			  cursor: pointer;
+			  background: #CCC;
+			  border-radius: 5px;
+			  border-top: 1px solid #FFF;
+			  box-shadow: 0 5px 0 #999;
+			  transition: box-shadow 0.1s, top 0.1s;
+			}
+			.next:hover, .prev:hover, .rotate:hover { color: #000; }
+			.next:active, .prev:active, .rotate:active {
+			  top: 100px;
+			  box-shadow: 0 1px 0 #999;
+			}
+			.controller {
+				  display: flex;
+				  justify-content: center;
+		    }
+			.next { position: relative; left: auto; top: 80px; width: auto; margin: auto; display: inline; }
+			.prev { position: relative; left: auto; top: 80px; width: auto; margin: auto; display: inline; }
+			.rotate { position: relative; left: auto; top: 80px; width: auto; margin: auto; display: inline; }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+		  <div class="carousel">
+		    <!-- Merry Christmas!! -->
+		    <div class="item a1">M</div>
+		    <div class="item a2">e</div>
+		    <div class="item a3">r</div>
+		    <div class="item a4">r</div>
+		    <div class="item a5">y</div>
+		    <div class="item a6"></div>
+		    <div class="item a7">C</div>
+		    <div class="item a8">h</div>
+		    <div class="item a9">r</div>
+		    <div class="item a10">i</div>
+		    <div class="item a11">s</div>
+		    <div class="item a12">t</div>
+		    <div class="item a13">m</div>
+		    <div class="item a14">a</div>
+		    <div class="item a15">s</div>
+		    <div class="item a16">!</div>
+		    <div class="item a17">!</div>
+		    <div class="item a18"></div>
+		  </div>
+		</div>
+		<div class="controller">
+			<div class="prev">Prev</div>
+			<div class="rotate">Automatic Rotate</div>
+			<div class="next">Next</div>
+		</div>
+		<hr/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	    <p>Based on <a href="https://www.starbytes.it/blog/8-esempi-progetti-web-3d-realizzati-css-javascript/" target="_blank">examples</a></p>
+	</body>
+</html>
