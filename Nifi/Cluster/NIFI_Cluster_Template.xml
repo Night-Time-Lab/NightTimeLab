@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.2">
+    <description></description>
+    <groupId>6eeff6fc-0169-1000-64d9-7fd4ba1ee195</groupId>
+    <name>NIFI Cluster Template</name>
+    <snippet>
+        <connections>
+            <id>3fd5d0a3-e848-3701-0000-000000000000</id>
+            <parentGroupId>c15c4c02-15d4-3592-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>1f62d7a5-f81a-3e6d-0000-000000000000</groupId>
+                <id>aed6a506-f401-3548-87d9-6e6d3fc4afb1</id>
+                <type>REMOTE_INPUT_PORT</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>c15c4c02-15d4-3592-0000-000000000000</groupId>
+                <id>ac433115-7d91-33d8-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>c2e74b3b-8894-3a89-0000-000000000000</id>
+            <parentGroupId>c15c4c02-15d4-3592-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>c15c4c02-15d4-3592-0000-000000000000</groupId>
+                <id>4af2deba-4924-3936-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <source>
+                <groupId>c15c4c02-15d4-3592-0000-000000000000</groupId>
+                <id>312736f0-42a8-3fe9-0000-000000000000</id>
+                <type>INPUT_PORT</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <inputPorts>
+            <id>312736f0-42a8-3fe9-0000-000000000000</id>
+            <parentGroupId>c15c4c02-15d4-3592-0000-000000000000</parentGroupId>
+            <position>
+                <x>22.0</x>
+                <y>271.0</y>
+            </position>
+            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+            <name>Files</name>
+            <state>RUNNING</state>
+            <transmitting>false</transmitting>
+            <type>INPUT_PORT</type>
+        </inputPorts>
+        <processors>
+            <id>4af2deba-4924-3936-0000-000000000000</id>
+            <parentGroupId>c15c4c02-15d4-3592-0000-000000000000</parentGroupId>
+            <position>
+                <x>436.0</x>
+                <y>259.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.9.0</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Directory</key>
+                        <value>
+                            <name>Directory</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Conflict Resolution Strategy</key>
+                        <value>
+                            <name>Conflict Resolution Strategy</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Create Missing Directories</key>
+                        <value>
+                            <name>Create Missing Directories</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Maximum File Count</key>
+                        <value>
+                            <name>Maximum File Count</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Last Modified Time</key>
+                        <value>
+                            <name>Last Modified Time</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Permissions</key>
+                        <value>
+                            <name>Permissions</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Owner</key>
+                        <value>
+                            <name>Owner</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Group</key>
+                        <value>
+                            <name>Group</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Directory</key>
+                        <value>/home/nifi/output</value>
+                    </entry>
+                    <entry>
+                        <key>Conflict Resolution Strategy</key>
+                        <value>fail</value>
+                    </entry>
+                    <entry>
+                        <key>Create Missing Directories</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>Maximum File Count</key>
+                    </entry>
+                    <entry>
+                        <key>Last Modified Time</key>
+                    </entry>
+                    <entry>
+                        <key>Permissions</key>
+                    </entry>
+                    <entry>
+                        <key>Owner</key>
+                    </entry>
+                    <entry>
+                        <key>Group</key>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>PutFile</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>failure</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>RUNNING</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.PutFile</type>
+        </processors>
+        <processors>
+            <id>ac433115-7d91-33d8-0000-000000000000</id>
+            <parentGroupId>c15c4c02-15d4-3592-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>0.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.9.0</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>File Size</key>
+                        <value>
+                            <name>File Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Batch Size</key>
+                        <value>
+                            <name>Batch Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Data Format</key>
+                        <value>
+                            <name>Data Format</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Unique FlowFiles</key>
+                        <value>
+                            <name>Unique FlowFiles</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>generate-ff-custom-text</key>
+                        <value>
+                            <name>generate-ff-custom-text</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>character-set</key>
+                        <value>
+                            <name>character-set</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>PRIMARY</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>File Size</key>
+                        <value>0B</value>
+                    </entry>
+                    <entry>
+                        <key>Batch Size</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>Data Format</key>
+                        <value>Text</value>
+                    </entry>
+                    <entry>
+                        <key>Unique FlowFiles</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>generate-ff-custom-text</key>
+                        <value>Hello World</value>
+                    </entry>
+                    <entry>
+                        <key>character-set</key>
+                        <value>UTF-8</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>1 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>GenerateFlowFile</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>RUNNING</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.GenerateFlowFile</type>
+        </processors>
+        <remoteProcessGroups>
+            <id>1f62d7a5-f81a-3e6d-0000-000000000000</id>
+            <parentGroupId>c15c4c02-15d4-3592-0000-000000000000</parentGroupId>
+            <position>
+                <x>590.0</x>
+                <y>0.0</y>
+            </position>
+            <comments></comments>
+            <communicationsTimeout>30 sec</communicationsTimeout>
+            <contents>
+                <inputPorts>
+                    <batchSettings>
+                        <count>1</count>
+                        <duration></duration>
+                        <size></size>
+                    </batchSettings>
+                    <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                    <connected>true</connected>
+                    <exists>true</exists>
+                    <groupId>b41c00cd-fbb6-3f0b-9ab4-ecc92baaa888</groupId>
+                    <id>aed6a506-f401-3548-87d9-6e6d3fc4afb1</id>
+                    <name>Files</name>
+                    <targetId>621e97ea-abf3-377d-aba7-41f2b7b91f9e</targetId>
+                    <targetRunning>true</targetRunning>
+                    <transmitting>true</transmitting>
+                    <useCompression>false</useCompression>
+                </inputPorts>
+            </contents>
+            <proxyHost></proxyHost>
+            <proxyUser></proxyUser>
+            <targetUri>http://3acf9a658079:8080</targetUri>
+            <targetUris>http://3acf9a658079:8080</targetUris>
+            <transportProtocol>RAW</transportProtocol>
+            <yieldDuration>10 sec</yieldDuration>
+        </remoteProcessGroups>
+    </snippet>
+    <timestamp>03/11/2019 23:16:44 UTC</timestamp>
+</template>
