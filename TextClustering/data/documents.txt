@@ -1,0 +1,5 @@
+text
+The sun is a star
+The earth is a planet
+The moon is a satellite’s earth
+The sun is yellow
